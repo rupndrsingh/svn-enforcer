@@ -1,0 +1,30 @@
+# Important considerations for running svn_enforcer.
+1) It uses certain python libraries/functions defined in pylib folder
+2) It uses a svn.cfg configuration file
+
+The svn.cfg file should look like the following:
+[analytics]
+path="/var/lib/mysqllog/working/analytics/"
+email="email@gmail.com, email2@gmail.com, email3@gmail.com"
+[ML]
+path="/var/lib/mysqllog/working/ML/"
+email="email@gmail.com"
+[Scraping]
+path="/var/lib/mysqllog/working/Scraping/"
+email="email@gmail.com"
+~                           
+
+Note, each path should be a SVN working copy. SVN working copies can be created as follows, for example:
+svn co https://mysvn.com:18080/path/of/repo --username=myun --force /path/of/working-copy/
+# To set global proplist:
+svn propedit svn:global-ignores
+add following:
+*.zip
+*.cfg
+*.log
+
+Reports will be sent to emails listed under email variable.
+Each report should begin with "[]" definition. 
+
+Example Crontab:
+30 9 * * * /usr/bin/python2.7 /path/to/svn_enforcer.py > /path/for/svn.log 2>&1
