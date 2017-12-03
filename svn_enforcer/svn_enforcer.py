@@ -82,7 +82,7 @@ if __name__ == '__main__':
             #CREATE HTML FOR EMAIL:
             eHTML = "<!DOCTYPE html>" 
             eHTML += "<html>"
-        eTo = 'rupinder@cozeva.com' #default email for errors
+        eTo = 'YOUR_EMAIL_HERE@HOST.COM' #enter default email for errors
         eSubject = "SVN ENFORCER: "+HOSTNAME+" (FAILED!)"
         eHTML += "<h4> Process Failed! ("+time.strftime("%c")+") </h4>"
         eHTML += "</html>" 
