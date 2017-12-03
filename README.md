@@ -1,2 +1,2 @@
 # svn-enforcer
-A script that can be deployed via cron on servers to regularly inform dev teams on changes and conflicts via email.
+Code deployed on some environment can sometimes be different with the code stored in a repository of a version control system such as svn. This script can be used to automatically resolve such differences and report remaining conflicts via email. In addition, it can be used share some basic stats on the contributers such as the number of commits they have made and their latest commit. 
